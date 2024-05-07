@@ -3,7 +3,7 @@ import { SelectedTreeContext } from "./App";
 
 import FileIcon from "./assets/file.svg?react";
 import DirectoryIcon from "./assets/directory.svg?react";
-import FileTreeModel from "./model/fileTreeModel";
+import FileTreeModel from "./model/fileTreeNodeModel";
 
 function FileTreeNode({ node, children }: { node: FileTreeModel; children: React.ReactNode }) {
   const { selectedTreeNodeId, setSelectedTreeNodeId } = useContext(SelectedTreeContext);
