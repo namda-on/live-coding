@@ -57,7 +57,9 @@ class FileTreeModel {
   }
 
   // TODO
-  findNodeById(id: string) {}
+  findNodeById(id: string): FileTreeModel | null {
+    return null;
+  }
 }
 
 export default FileTreeModel;
