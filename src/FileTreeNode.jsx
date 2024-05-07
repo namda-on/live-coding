@@ -8,7 +8,7 @@ function FileTreeNode({ node, children }) {
   const { selectedTreeNodeId, setSelectedTreeNodeId } = useContext(SelectedTreeContext);
 
   const handleClick = () => {
-    setSelectedTreeNodeId(node);
+    setSelectedTreeNodeId(node.id);
   };
 
   const isSelected = useMemo(() => node.id === selectedTreeNodeId, [selectedTreeNodeId]);
