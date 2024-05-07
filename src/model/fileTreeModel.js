@@ -5,7 +5,7 @@ export const FILE_TREE_TYPE = {
 
 class FileTreeModel {
   constructor(serverData) {
-    this._id = serverData._id;
+    this.id = serverData.id;
     this.name = serverData.name;
     this.type = serverData.type; // "DIRECTORY" | "FILE"
     this.children = serverData.children?.map((child) => new FileTreeModel(child)) ?? [];
@@ -16,7 +16,7 @@ class FileTreeModel {
 
   static createRootFileTreeModelFrom(fileTreeData = []) {
     return new FileTreeModel({
-      _id: "root",
+      id: "root",
       name: "root",
       type: FILE_TREE_TYPE.DIRECTORY,
       children: fileTreeData,

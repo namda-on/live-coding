@@ -1,6 +1,6 @@
 export const mockTree = [
   {
-    _id: "1",
+    id: "1",
     name: "folder1",
     type: "DIRECTORY",
     parentId: null,
@@ -8,7 +8,7 @@ export const mockTree = [
     prevNodeId: null,
     children: [
       {
-        _id: "3",
+        id: "3",
         name: "1_1",
         type: "FILE",
         parentId: "1",
@@ -16,7 +16,7 @@ export const mockTree = [
         prevNodeId: null,
       },
       {
-        _id: "4",
+        id: "4",
         name: "1_2",
         type: "FILE",
         parentId: "1",
@@ -24,7 +24,7 @@ export const mockTree = [
         prevNodeId: "3",
       },
       {
-        _id: "5",
+        id: "5",
         name: "Untitled",
         type: "FILE",
         parentId: "1",
@@ -34,7 +34,7 @@ export const mockTree = [
     ],
   },
   {
-    _id: "2",
+    id: "2",
     name: "folder2",
     type: "DIRECTORY",
     parentId: null,
@@ -42,7 +42,7 @@ export const mockTree = [
     prevNodeId: "1",
     children: [
       {
-        _id: "6",
+        id: "6",
         name: "1_3",
         type: "FILE",
         parentId: "2",
@@ -50,7 +50,7 @@ export const mockTree = [
         prevNodeId: null,
       },
       {
-        _id: "7",
+        id: "7",
         name: "1_zz",
         type: "FILE",
         parentId: "2",
@@ -60,7 +60,7 @@ export const mockTree = [
     ],
   },
   {
-    _id: "8",
+    id: "8",
     name: "rootfile",
     type: "FILE",
     parentId: null,
