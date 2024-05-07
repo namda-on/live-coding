@@ -56,7 +56,7 @@ class FileTreeModel {
     return this.children.length > 0;
   }
 
-  // TODO
+  // TODO : id 를 받아서 해당 노드를 찾아서 반환하는 함수
   findNodeById(id: string): FileTreeModel | null {
     return null;
   }
