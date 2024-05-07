@@ -5,19 +5,21 @@ function useTree() {
   const [tree, setTree] = useState(FileTreeModel.createRootFileTreeModelFrom());
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(function fetchTree() {
-    (async () => {
-      setIsLoading(true);
-      const response = await fetch("/tree");
-      const data = await response.json();
+  const fetchTreeData = async () => {
+    setIsLoading(true);
+    const response = await fetch("/tree");
+    const data = await response.json();
 
-      const tree = FileTreeModel.createRootFileTreeModelFrom(data);
-      setTree(tree);
-      setIsLoading(false);
-    })();
+    const tree = FileTreeModel.createRootFileTreeModelFrom(data);
+    setTree(tree);
+    setIsLoading(false);
+  };
+
+  useEffect(function fetchTree() {
+    fetchTreeData();
   }, []);
 
-  return { tree, isLoading };
+  return { tree, isLoading, refetch: fetchTreeData };
 }
 
 export default useTree;
