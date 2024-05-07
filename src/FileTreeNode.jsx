@@ -5,13 +5,13 @@ import FileIcon from "./assets/file.svg?react";
 import DirectoryIcon from "./assets/directory.svg?react";
 
 function FileTreeNode({ node, children }) {
-  const { selectedTreeNode, setSelectedTreeNode } = useContext(SelectedTreeContext);
+  const { selectedTreeNodeId, setSelectedTreeNodeId } = useContext(SelectedTreeContext);
 
   const handleClick = () => {
-    setSelectedTreeNode(node);
+    setSelectedTreeNodeId(node);
   };
 
-  const isSelected = useMemo(() => node.id === selectedTreeNode?.id, [selectedTreeNode]);
+  const isSelected = useMemo(() => node.id === selectedTreeNodeId, [selectedTreeNodeId]);
   const selectedStyle = useMemo(() => (isSelected ? { backgroundColor: "#D0D3D2" } : {}), [isSelected]);
 
   return (

@@ -37,6 +37,9 @@ class FileTreeModel {
   hasChildren() {
     return this.children.length > 0;
   }
+
+  // TODO
+  findNodeById(id) {}
 }
 
 export default FileTreeModel;

@@ -6,21 +6,41 @@ import "./app.css";
 export const SelectedTreeContext = createContext(null);
 
 function App() {
-  const { tree: result, isLoading } = useTree();
-  const [selectedTreeNode, setSelectedTreeNode] = useState(null);
+  const { tree, isLoading, refetch } = useTree();
+  const [selectedTreeNodeId, setSelectedTreeNodeId] = useState(null);
 
   const contextValue = useMemo(
-    () => ({ selectedTreeNode, setSelectedTreeNode }),
-    [selectedTreeNode, setSelectedTreeNode]
+    () => ({ selectedTreeNodeId, setSelectedTreeNodeId }),
+    [selectedTreeNodeId, setSelectedTreeNodeId]
   );
 
   if (isLoading) return <div>Loading </div>;
 
+  const onClickCreate = async () => {
+    const node = tree.findNodeById(selectedTreeNodeId);
+
+    const result = await fetch("/tree", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // parentId : TODO
+      }),
+    });
+
+    if (result.ok) {
+      refetch();
+    }
+  };
+
   return (
     <SelectedTreeContext.Provider value={contextValue}>
       <div>
-        <button className="create_button">create</button>
-        <FileTree tree={result} setSelectedTreeNode={setSelectedTreeNode} />
+        <button onClick={onClickCreate} className="create_button">
+          create
+        </button>
+        <FileTree tree={tree} />
       </div>
     </SelectedTreeContext.Provider>
   );
