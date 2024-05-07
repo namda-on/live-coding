@@ -11,15 +11,16 @@ export const handlers = [
   http.post("/tree", async ({ request }) => {
     const { prevId, parentId } = await request.json();
 
-    // Create a new node
-    const targetParent = parentId === null ? mockTree : mockTree.find((node) => node.id === parentId);
+    const targetParent = parentId === null ? mockTree : mockTree.find((node) => node.id === String(parentId));
+    const lastNode = targetParent?.children[targetParent.children.length - 1] ?? null;
+
     const newNode = {
       id: idx,
       name: "Untitled",
       type: "FILE",
       parentId: parentId,
       nextNodeId: null,
-      prevNodeId: prevId,
+      prevNodeId: lastNode,
     };
 
     if (Array.isArray(targetParent)) {

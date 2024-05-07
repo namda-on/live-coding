@@ -3,8 +3,9 @@ import { SelectedTreeContext } from "./App";
 
 import FileIcon from "./assets/file.svg?react";
 import DirectoryIcon from "./assets/directory.svg?react";
+import FileTreeModel from "./model/fileTreeModel";
 
-function FileTreeNode({ node, children }) {
+function FileTreeNode({ node, children }: { node: FileTreeModel; children: React.ReactNode }) {
   const { selectedTreeNodeId, setSelectedTreeNodeId } = useContext(SelectedTreeContext);
 
   const handleClick = () => {
@@ -25,7 +26,7 @@ function FileTreeNode({ node, children }) {
   );
 }
 
-function FileTreeNodeIcon({ isDirectory }) {
+function FileTreeNodeIcon({ isDirectory }: { isDirectory: boolean }) {
   const renderIcon = () => {
     if (isDirectory) {
       return <DirectoryIcon className="shrink-0 w-3" />;

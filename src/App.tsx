@@ -3,11 +3,14 @@ import useTree from "./hooks/useTree";
 import FileTree from "./FileTree";
 import "./app.css";
 
-export const SelectedTreeContext = createContext(null);
+export const SelectedTreeContext = createContext<{
+  selectedTreeNodeId: string;
+  setSelectedTreeNodeId: React.Dispatch<React.SetStateAction<string>>;
+}>({ selectedTreeNodeId: "", setSelectedTreeNodeId: () => {} });
 
 function App() {
   const { tree, isLoading, refetch } = useTree();
-  const [selectedTreeNodeId, setSelectedTreeNodeId] = useState(null);
+  const [selectedTreeNodeId, setSelectedTreeNodeId] = useState<string>("");
 
   const contextValue = useMemo(
     () => ({ selectedTreeNodeId, setSelectedTreeNodeId }),
