@@ -12,7 +12,10 @@ export const handlers = [
     const { prevId, parentId } = await request.json();
 
     const targetParent = parentId === null ? mockTree : mockTree.find((node) => node.id === String(parentId));
-    const lastNode = targetParent?.children[targetParent.children.length - 1] ?? null;
+
+    const lastNode = targetParent?.children?.length
+      ? targetParent?.children[targetParent.children?.length - 1] ?? null
+      : null;
 
     const newNode = {
       id: idx,

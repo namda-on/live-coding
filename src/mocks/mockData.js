@@ -9,7 +9,7 @@ export const mockTree = [
     children: [
       {
         id: "3",
-        name: "1_1",
+        name: "1_1 file",
         type: "FILE",
         parentId: "1",
         nextNodeId: "4",
@@ -17,7 +17,7 @@ export const mockTree = [
       },
       {
         id: "4",
-        name: "1_2",
+        name: "1_2 file",
         type: "FILE",
         parentId: "1",
         nextNodeId: "5",
@@ -43,7 +43,7 @@ export const mockTree = [
     children: [
       {
         id: "6",
-        name: "1_3",
+        name: "2_1 file",
         type: "FILE",
         parentId: "2",
         nextNodeId: "7",
@@ -51,7 +51,7 @@ export const mockTree = [
       },
       {
         id: "7",
-        name: "1_zz",
+        name: "2_2 file",
         type: "FILE",
         parentId: "2",
         nextNodeId: null,
