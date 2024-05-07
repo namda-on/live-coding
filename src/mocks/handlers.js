@@ -9,7 +9,11 @@ export const handlers = [
   }),
 
   http.post("/tree", async ({ request }) => {
-    const { prevId, parentId } = await request.json();
+    const { parentId } = await request.json();
+
+    if (!parentId) {
+      return HttpResponse.json({ error: "parentId is required" }, { status: 400 });
+    }
 
     const targetParent = parentId === null ? mockTree : mockTree.find((node) => node.id === String(parentId));
 
