@@ -16,7 +16,8 @@
     "@vitejs/plugin-react": "^4.2.1",
     "msw": "^2.2.14",
     "prettier": "^3.2.5",
-    "vite": "^5.2.10"
+    "vite": "^5.2.10",
+    "vite-plugin-svgr": "^4.2.0"
   },
   "msw": {
     "workerDirectory": [
