@@ -1,25 +1,18 @@
-import { useState } from 'react'
+import useTree from "./hooks/useTree";
+import FileTree from "./FileTree";
+import "./app.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { tree: result, isLoading } = useTree();
+
+  if (isLoading) return <div>Loading </div>;
 
   return (
-    <>
-
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <button className="create_button">create</button>
+      <FileTree tree={result} />
+    </div>
+  );
 }
 
-export default App
+export default App;

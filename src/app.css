@@ -1,0 +1,31 @@
+.create_button {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: #1b4f36;
+  border: 0px;
+  font-size: 1.15rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.tree_node {
+  font-size: 1.2rem;
+}
+
+.tree_node > li {
+  margin-left: 2rem;
+}
+
+.tree_node_content {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.tree_node_content:hover {
+  background-color: aliceblue;
+}
+
+.tree_node:hover > li {
+  background-color: white; /* 부모에 hover되었을 때 자식들의 배경색을 투명하게 만듦 */
+}
