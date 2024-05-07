@@ -16,7 +16,7 @@ function FileTreeNode({ node, children }) {
       <div onClick={handleClick} className="tree_node_content" style={selectedStyle}>
         {node.name}
       </div>
-      {children}
+      <ul>{children}</ul>
     </li>
   );
 }
