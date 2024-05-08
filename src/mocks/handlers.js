@@ -11,7 +11,7 @@ export const handlers = [
   http.post("/tree", async ({ request }) => {
     const { parentId } = await request.json();
 
-    if (!parentId) {
+    if (parentId === undefined) {
       return HttpResponse.json({ error: "parentId is required" }, { status: 400 });
     }
 
