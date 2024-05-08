@@ -21,6 +21,7 @@ function App() {
 
   // TODO : 해당 함수 구현
   const onClickCreate = async () => {
+    //NOTE: rootTree는 최상위 루트노드를 의미합니다. 자식 노드를 순회하며 선택된 노트를 탐색하는 메서드를 구현하세요.
     const node = rootTree.findNodeById(selectedTreeNodeId);
 
     const result = await fetch("/tree", {
