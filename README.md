@@ -1,8 +1,10 @@
-### 요구사항
+### 프로젝트 구조
 
 서버의 파일 트리 data에 대해서 랜더링 및 선택 등이 React로 구현되어 있는 상태입니다.
-트리의 최대 depth는 2이며, 현재 화면에 그려지고 있는 트리가 트리의 최대 depth 입니다.
+데이터는 트리 구조를 가지고 있습니다. 트리의 최대 depth는 2이며, 현재 화면에 그려지고 있는 트리가 트리의 최대 depth 입니다.
 `useTree` 의 return으로 반환되는 rootTree는 아래와 같은 구조로 표현할 수 있습니다.
+
+`mocks/mockData`에 모킹되어 있는 서버 데이터를 `fileTreeNodeModel`에서 가공하여 클라이언트의 데이터 모델로 사용합니다.
 
 ```
 root Tree
@@ -15,6 +17,8 @@ root Tree
   ㄴ 2_2 file
 ㄴ rootfile
 ```
+
+### 요구사항
 
 화면상에서 각각의 트리 노드는 클릭시 id가 `App.tsx`의 `selectedTreeNodeId` 로 저장됩니다.
 
