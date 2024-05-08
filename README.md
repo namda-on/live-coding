@@ -32,3 +32,6 @@ root Tree
 
 - 2_2 file을 선택하고 파일을 생성한 경우
   folder2 하위에 Untitled 파일 생성
+
+
+![예시](https://github.com/namda-on/live-coding/assets/60877502/1134cfa4-d06a-4235-bec9-f0a943395314)
