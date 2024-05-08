@@ -19,6 +19,7 @@ function App() {
 
   if (isLoading) return <div>Loading </div>;
 
+  // TODO : 해당 함수 구현
   const onClickCreate = async () => {
     const node = rootTree.findNodeById(selectedTreeNodeId);
 
@@ -28,7 +29,7 @@ function App() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        parentId: null,
+        parentId: null, // FIXME : parentId 를 설정해주세요
       }),
     });
 

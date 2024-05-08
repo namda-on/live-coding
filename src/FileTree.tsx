@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import FileTreeNode from "./FileTreeNode";
-import FileTreeModel from "./model/fileTreeModel";
+import FileTreeModel from "./model/fileTreeNodeModel";
 
 function FileTree({ tree }: { tree: FileTreeModel }) {
   // NOTE : file tree node 랜더링
